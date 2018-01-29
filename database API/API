@@ -1,0 +1,43 @@
+Class Record:
+This class is used to store individual record (tuple). The type of entries should be consistent with that of table's attributes. Otherwise, it will give error when adding the record to the table.
+If you want to create a record with a specific number of entries, use Record(int n) function; if you want to create a record with the entries' content, use Record(vector<string> entries).
+Variable:
+ vector<string> entries : the vector used to store entries.
+Function:
+Record(vector<string> entries): Argument is a vector of strings containing the content of entries. Each string is an entry. construct a record with the entries. 
+Record(int n): Argument is an integer number standing for the size of record. construct a record with n entries.
+int size(): return the number of entries.
+string get (int i): return the ith entries in the record. If i is larger than the size, output a string to notify user.
+void set (int i, string val): set the value of ith entries as val. If i is larger than the size, output a string to notify user.
+
+
+
+Class Table:
+Attribute(string name, string type): constructor of type Attribute
+Table(): An empty constructor to create a table with no rows or columns.
+Table(vector<Attribute>): Table constructor takes a list of attributes
+void AddAttribute(string attr): takes in a single attribute name and add a column to the end of the table with that new attribute. Any entries currently in the table should get NULL for that entry.
+void DeleteAttribute(string attr): takes an attribute name and deletes it from the table
+vector<string> get_attr(): return a list of the attributes for that table in order
+int get_size(): return the number of records in the table 
+vector<vector<string>> iterate(): return individual records from the table.
+void SpecifyKey(string attr): input a single attribute name as a key for the table
+void Add(Record r): takes a record and adds it to the table
+table cross_join(Table a, Table b): take two tables as input and produce one table as output.
+table natural_join(Table a, Table b): Input two tables. One is produced as output. The first table should have an attribute name(s) matching the key from the second table. The join should create one entry for each row of the first table, with the additional columns from the matching key in the second table. If the second table does not have a key, or the first table does not have an attribute matching the key name, then an error message will return.
+int count(string attr): return the number of non-null entries.
+string Min(string attr): return the minimum entry in one attribute
+string Max(string attr): return the maximum entry in one attribute
+
+
+
+Class Database:
+Database( ):database constructer. Create an empty database.
+void add(Table a, string name): An add table function that takes a single table object and a name, and adds that table to the database. If the name already exists, the program will print “this table name already exist”. 
+void drop(string name): A drop function that takes a table name and deletes it from the database. If this table doesn’t exist, print “this table name doesn’t exist”.
+vector<string> get_alltableName(): A list table function that returns a list of all table names in the database.
+vector<Table> get_alltable( ): A get tables function that returns all the tables in the database.
+Table query_process(vector<string> attribute, string table, string where): query_process function has three arguments which are select, from and where. It will return a new table.
+
+
+

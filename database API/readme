@@ -1,0 +1,7 @@
+Our program read first 1000 records from business.json and user.json and corresponding reviews from review.json, then provies five functions and they are displayed on the screen. 
+User can choose them by entering a number 1~5. The first one is to display user information by entering user name or user id (for example, lsSiIjAKVl-QRxKjRErBeg or Jeff, will return all Jeff's information). The second one is to 
+display business information by entering business name or business id (for example Pho Huong). The third one is to filter business by entering city and the minimum
+star(for example Las Vegas, 4). The fourth one is to display all the reviews for a business by entering the business name or id. The fifith one is to display some
+summary about the data. We use most of the functionalities in the database API, including query, natural join, count. But we did not use cross join 
+because it seems to be useless in this case. We also did not use max, min because they only return a string or number so we did not know 
+the record it belongs to. We also used json.hpp to parse json file.
